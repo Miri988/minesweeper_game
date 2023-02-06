@@ -1,0 +1,184 @@
+body {
+  font-size: 14px;
+  font-family: 'Verdana', Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  line-height: 1.15;
+  height: 100vh;
+}
+
+a, button, select {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button {
+  font-family: 'Courier New', Courier, monospace;
+  padding: .5em 1em;
+  background-color: rgb(240, 240, 240);
+  border-radius: 3px;
+  border: 1px solid rgba(35, 35, 35, .4)
+}
+
+div {
+  position: relative;
+}
+
+[class*="center aligned"] {
+  text-align: center;
+  justify-content: center;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.vertical {
+  flex-flow: column;
+}
+
+.flex.centered {
+  align-items: center;
+}
+
+.flex > .fluid {
+  flex-grow: 1;
+}
+
+.form .field + .field {
+  margin-top: .8em;
+}
+
+.form .field > label {
+  display: block;
+  font-size: .8em;
+  margin-bottom: .4em;
+  font-weight: 700;
+}
+
+#main > .form {
+  min-width: 300px;
+}
+
+.fluid {
+  width: 100%;
+}
+
+select {
+  padding: .5em;
+}
+
+.divider {
+  font-weight: 700;
+  color: grey;
+  text-align: center;
+  display: grid;
+  grid-template: 1fr / 1fr min-content 1fr;
+  grid-gap: 0.7em;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  height: 1px;
+  background: rgba(35, 35, 35, .3);
+  position: relative;
+  top: 50%;
+}
+
+.game .table.field {
+  border-collapse: collapse;
+  border: 1px solid rgba(35, 35, 35, .4);
+}
+
+.game .table.field tbody > tr:not(:last-child) > td {
+  border-bottom: 1px solid rgba(35, 35, 35, .4);
+}
+
+.game .table.field tbody > tr > td:not(:last-child) {
+  border-right: 1px solid rgba(35, 35, 35, .4);
+}
+
+.game .table.field tbody td .cell {
+  width: 15px;
+  height: 15px;
+  padding: .3em;
+  box-shadow: inset -2px -2px 1px rgb(200 200 200 / 90%);
+  background: rgba(220, 220, 220, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game .table.field tbody td .cell:not(.explored):hover {
+  cursor: pointer;
+}
+
+.game .table.field tbody td .cell.marked {
+  background-image: url('img/flag.png');
+  background-size: contain;
+  background-position-y: -2px;
+  background-repeat: no-repeat;
+}
+
+.game .table.field tbody td .cell.mined {
+  background-image: url('img/mine.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: -1px;
+}
+
+.game .table.field tbody td .cell.explored {
+  box-shadow: none;
+}
+
+.game .table.field tbody td .cell.explored:not(.mined) {
+  background: rgba(240, 240, 240, .7);
+}
+
+.segment {
+  padding: 1em;
+}
+
+.segments.fitted > .segment {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.segments.fitted > .segment:first-child {
+  padding-top: 0;
+}
+
+.segments.fitted > .segment:last-child {
+  padding-bottom: 0;
+}
+
+.segments > .segment + .segment {
+  border-top: 1px solid rgba(35, 35, 35, .4);
+}
+
+.timer .text {
+  padding-left: .4em;
+}
+
+.message {
+  padding: 1em;
+}
+
+.message.positive {
+  box-shadow: 0 0 0 1px #a3c293 inset, 0 0 0 0 transparent;
+  background-color: #fcfff5;
+  color: #2c662d;
+}
+
+.message.negative {
+  box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+  background-color: #fff6f6;
+  color: #9f3a38;
+}
